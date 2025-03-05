@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reprodução da Tela</title>
+  <base href="elearning.com">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+      font-size: 16px;
+    }
+
+    /* Barra de status (topo do iPhone) */
+    .status-bar {
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 4px 10px;
+      font-size: 14px;
+    }
+
+    .status-bar .time {
+      font-weight: bold;
+    }
+
+    .status-bar .icons {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* Container principal do perfil */
+    .profile-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #ccc; /* Imita a ausência de foto */
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: #666;
+    }
+
+    .profile-container h1 {
+      font-size: 18px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .profile-container p {
+      font-size: 14px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #555;
+    }
+
+    .profile-container button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .profile-container button:hover {
+      opacity: 0.8;
+    }
+
+    /* Ícones e textos das seções (Organização, Notas, etc.) */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    }
+
+    /* .menu-item img {
+      width: 40px;  
+      height: 40px; 
+      margin-bottom: 8px;
+    } */
+
+    /* Podemos estilizar cada item se quisermos, mas aqui é genérico */
+    .menu-item p {
+      margin-top: 4px;
+    }
+
+    /* Rodapé de navegação (Fluxo, Cursos, Calendário, Mais) */
+    .bottom-nav {
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 8px 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 12px;
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-item img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de status 
+  <div class="status-bar">
+    <div class="time">01:43</div>
+    <div class="icons">
+      <span>4G</span>
+      <span>▮▮▮</span> 
+      <span>80%</span> 
+    </div>
+  </div> -->
+
+  <!-- Seção de perfil -->
+  <div class="profile-container">
+    <img src="../profile.png" alt="Avatar" class="avatar">
+    <h1>Afonso Gregório de Sousa .</h1>
+    <p>a99999@alunos.uminho.pt</p>
+    <button>Ver perfil</button>
+  </div>
+
+  <!-- Ícones de organização, notas, etc. -->
+  <div class="menu-grid">
+    <div class="menu-item">
+      <!-- Substitua o src pela imagem/ícone real -->
+      <img src="../organizacao.png" alt="Organização" width="40" height="40">
+      <p>Organização</p>
+    </div>
+    <div class="menu-item">
+      <img src="../notas.png" alt="Notas" width="40" height="40">
+      <p>Notas</p>
+    </div>
+    <div class="menu-item">
+      <img src="../mensagens.png" alt="Mensagens" width="40" height="38">
+      <p>Mensagens</p>
+    </div>
+    <div class="menu-item">
+      <img src="../definicoes.png" alt="Definições" width="40" height="33">
+      <p>Definições</p>
+    </div>
+    <div class="menu-item">
+      <img src="../comentarios.png" alt="Comentários" width="38" height="38">
+      <p>Comentários</p>
+    </div>
+    <div class="menu-item">
+      <img src="../terminar_sessao.png" alt="Terminar sessão" width="40" height="38">
+      <p>Terminar sessão</p>
+    </div>
+  </div>
+
+  <!-- Barra de navegação inferior -->
+  <div class="bottom-nav">
+    <div class="nav-item">
+      <img src="../fluxo.png" alt="Fluxo">
+      <span>Fluxo</span>
+    </div>
+    <div class="nav-item">
+      <img src="../cursos.png" alt="Cursos">
+      <span>Cursos</span>
+    </div>
+    <div class="nav-item">
+      <img src="../calendario.png" alt="Calendário">
+      <span>Calendário</span>
+    </div>
+    <div class="nav-item">
+      <img src="../menu.png" alt="Mais">
+      <span>Mais</span>
+    </div>
+  </div>
+
+</body>
+</base>
+</html>
